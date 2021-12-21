@@ -1,0 +1,193 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- fetch_account_balance:
+    use_entities: true
+- account_number:
+    use_entities: true
+- mobile_number:
+    use_entities: true
+- email_id:
+    use_entities: true
+- person_name:
+    use_entities: true
+- what_is_leave_policy:
+    use_entities: true
+- leave_casual:
+    use_entities: true
+- leave_paternal:
+    use_entities: true
+- leave_medical:
+    use_entities: true
+- leave_annual:
+    use_entities: true
+- leave_childcare:
+    use_entities: true
+- leave_earned:
+    use_entities: true
+- salary_related_queries:
+    use_entities: true
+- job_related_queries:
+    use_entities: true
+- insurance:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- 'job_related_queries:':
+    use_entities: true
+entities:
+- mobile
+- email
+- accountnumber
+- person
+- number
+- cOps
+- whenOps
+- acCycle
+- lop
+- uan
+- review
+- aportal
+- wportal
+- einfo
+- jobRequi
+- seeAvilableJob
+- changeJob
+- refer
+- whatIsJob
+- illQuery
+- privacy
+- newChanges
+- Insurecommitte
+- policy
+slots:
+  mobile:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  email:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  accountnumber:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  person:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  number:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_how_can_I_help:
+  - text: Welcome to H.R. Chatbot. I can help you with resolving issues, finding solutions to queries, and lot more!
+  utter_ask_name:
+  - text: Please tell me your name
+  utter_ask_account_number:
+  - text: Please tell me your account number
+  utter_ask_email:
+  - text: Your email I.D. please
+  utter_ask_mobile_number:
+  - text: Your mobile number please
+  utter_leave_policy:
+  - text: The Company provides Leave benefits to eligible employees to enable them to take paid time-off for rest, recovery and recreation. The Company believes that this time is valuable for employees in order to enhance their productivity and physical well-being.
+  utter_ask_leave_via_ams:
+  - text: HFIS Employees can access leave balance through PSD, Employee Services, AMS, Leave, My Leave Balance and For LSG Employees can access leave balance through Workday Home, Time Off, Time Off Balance For more information on the entitlement and process, please click on the link below.
+  utter_ask_sick_leave:
+  - text: Yes, please deliver Z-15 form to your People Partner. You can also ask your People Partner for a draft of Z-15 form.
+  utter_ask_casual_leave:
+  - text: HFIS Employees can access leave balance through PSD then Employee Services then AMS then Leave then My Leave Balance LSG Employees can access leave balance through Workday Home then Time Off then Time Off Balance
+  utter_ask_annual_leave:
+  - text: Please navigate to Workday then home then Time off then Enter time off
+  utter_ask_parental_leave:
+  - text: Maternity (or paternity) leave can be entered by navigating to Workday home, Time off, Leave of Absence
+  utter_ask_childcare_leave:
+  - text: You can request for Child care leave the same way as entering the time off. From the Time off type, select Child care leave. This option can be enabled by raise a ticket at the Employee Support Portal or reaching out to the People Direct Team at your location.
+  utter_check_salary:
+  - text: To view your salary, please navigate to Workday Home, Profile Icon, My Profile, Compensation
+  utter_when_salary:
+  - text: New hires who start before/on the 10th of the month will be paid in the same month whereas those joining after this date will be paid in the following pay cycle. For example, if start date is 15th November, payment for 15th to 30th November will be paid in the December pay cycle. Please contact your Payroll specialist, Lynn Boyd at lynn.boyd@fisglobal.com for further assistance.
+  utter_attendance_cycle:
+  - text: Attendance from last month 13th to current month 12th is considered for current month payroll processing
+  utter_lop:
+  - text: This is because your leave was not regularized on time, Kindly update your AMS and get it approved from your manager by 12th for refund in next salary
+  utter_uan:
+  - text: Please raise a ticket on People Smart Desk
+  utter_salary_review:
+  - text: In accordance with the Company’s compensation policies, the Company shall conduct salary review at the beginning of the year. The Company shall proportionally adjust employees’ salary, including increasing, maintaining or decreasing salary based on the employees’ performance and actual number of working months and actual number of working days in the previous year, as well as the Company’s performance. The Company reviews salaries on an annual basis, normally in April. Individual performance, date of joining the Company together with skills and ability are taken into consideration when reviewing salaries. There is no obligation on behalf of the Company to increase salaries, however the Company aims to offer competitive compensation and benefits to all employees.
+  utter_einfo:
+  - text: Please raise a ticket at the Employee Support portal.
+  utter_available_jobs:
+  - text: You can view the open Job positions from the Peopleclick or Careers site and apply for the role.
+  utter_job_requisition:
+  - text: A manager can initiate job requisition using their Supervisory Organization account in Workday. If you are a manager and your Supervisory Organization account is not created yet, please click here to raise a ticket. Please select I need something and the service starting with People Office - Workday. If you are not sure how to create a Job Requisition please read Work Aids.
+  utter_refer:
+  - text: Please click here and then click on 'Send This Job to a Friend'
+  utter_what_is_job:
+  - text: Job Profiles are a consistent way of categorizing job roles across the whole of FIS. Job Profiles reflect the nature, size and scope of the role. Within the Opportunity Graph you will be able to see the descriptions associated with each job profile recommended to you.
+  utter_change_job:
+  - text: For updating a job profile a manager can login into Workday and navigate to Employee's profile, Actions and finally click on Change Job
+  utter_ill_query:
+  - text: Such cases should be managed through the Capability relating to Performance Issues Procedure. Once the reason for the impact on performance has been identified as illness, the manager must arrange an interview with the employee in accordance with the following procedure.
+  utter_privacy:
+  - text: The Company follows the guidelines set out under the Personal Information Protection and Electronic Documents Act (PIPEDA) which governs the protection of personal information in the hands of private sector organizations and provides guidelines for the collection, use and disclosure of that information in the course of commercial activity. The Act, based on ten privacy principles developed by the Canadian Standards Association, is overseen by the Privacy Commissioner of Canada and the Federal Court.
+  utter_new_changes:
+  - text: This year we have introduced New Modular Flex insurance plan which gives employees the ability to decide and choose from multiple enhanced benefits options as per their respective needs and requirements. Medical Insurance (New benefits), You are covered under the base and base plus plan by default. You have the option to Choose from Base plus, Silver, Gold, Diamond and Platinum plans. Move to the higher plan options with enhanced coverages by paying an additional premium. Flexi Plus Rider, This is an additional module which has enhanced benefits not covered under the regular policy. This can be bought over & above the base plan. (please refer benefits manual for detailed information) Group Personal Accident (New benefits), Top-up option for increasing the sum insured under accidental policy. Option to extend coverage for accidental insurance to spouse
+  utter_insurance_committe:
+  - text: The health and safety committee members are elected by the Work Council members. This committee helps the employer improve health, safety and working conditions for the employees in the workplace. A quarterly meeting takes place in presence of the HR Director, the Labour Inspector, the Medical Doctor and the Local Social Security representative.
+  utter_policy:
+  - text: The policy is Number 1. To provide safe and healthy working conditions and enlist the active support of all staff in achieving these ends. Number 2. To maintain safe and healthy work places and safe systems and methods of work. Number 3. To protect both staff and public from foreseeable work hazards and to provide staff with the information, instruction, training and supervision they need to work safely.
+  utter_goodbye:
+  - text: It was nice talking to you! good bye
+actions:
+- utter_how_can_I_help
+- utter_ask_account_number
+- utter_ask_mobile_number
+- utter_ask_name
+- utter_ask_email
+- utter_leave_policy
+- utter_ask_leave_via_ams
+- utter_ask_sick_leave
+- utter_ask_casual_leave
+- utter_ask_parental_leave
+- utter_ask_annual_leave
+- utter_ask_childcare_leave
+- utter_check_salary
+- utter_when_salary
+- utter_attendance_cycle
+- utter_lop
+- utter_uan
+- utter_salary_review
+- utter_einfo
+- utter_available_jobs
+- utter_job_requisition
+- utter_refer
+- utter_what_is_job
+- utter_change_job
+- utter_ill_query
+- utter_privacy
+- utter_new_changes
+- utter_insurance_committe
+- utter_policy
+- utter_goodbye
+- action_send_balance
+- action_my_fallback
+- action_send_name
+forms: {}
+e2e_actions: []
